@@ -18,11 +18,10 @@ WHERE `l`.`created_at` IS NULL
 
 -------------------------------------------------------------------
 
-3. Conta il numero di like per ogni post (DA REVISIONARE risultato: 152 non 165)
-
+3. Conta il numero di like per ogni post 
 SELECT COUNT(*) AS `likes_received`, `p`.`id` AS `post_id`
 FROM `likes` AS `l`
-JOIN `posts` AS `p`
+RIGHT JOIN `posts` AS `p`
 ON `l`.`post_id` = `p`.`id`
 GROUP BY `p`.`id`
 
